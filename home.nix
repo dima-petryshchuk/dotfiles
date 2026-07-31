@@ -16,6 +16,7 @@ in
     jq        # json on the command line
     lazygit
     neovim
+    nodejs   # node + npm
     # the font everything renders in
     nerd-fonts.hack
   ];
