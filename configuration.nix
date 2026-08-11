@@ -36,6 +36,8 @@
     onActivation.extraFlags = [ "--force" ];
     brews = [
       "herdr"
+      "postgresql@16"
+      "wget"
     ];
     casks = [
       "wezterm"

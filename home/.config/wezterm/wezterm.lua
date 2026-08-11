@@ -10,6 +10,17 @@ config.macos_window_background_blur = 50
 config.hide_tab_bar_if_only_one_tab = true
 config.window_decorations = "RESIZE"
 
+-- Without a title bar, WezTerm treats a thin strip at the very top edge as an
+-- OS-level resize hotspot. herdr draws its own tab row right at row 0, so
+-- clicks there can get eaten by the resize hotspot instead of reaching herdr.
+-- Extra top padding pushes herdr's tabs down out of that strip.
+config.window_padding = {
+	left = "1cell",
+	right = "1cell",
+	top = "1cell",
+	bottom = "0.5cell",
+}
+
 -- Dim unfocused windows so the focused one is obvious at a glance.
 local UNFOCUSED_FOREGROUND_TEXT_HSB = { hue = 1.0, saturation = 0.25, brightness = 0.45 }
 local UNFOCUSED_WINDOW_BACKGROUND_OPACITY = 0.62

@@ -1,6 +1,7 @@
 # global agent instructions
 
 - Never use the em dash "—". Use plain dash "-" instead
+- Never use emojis, in code/UI you write or in your own messages, unless the user specifically asks for one
 - When writing commit messages, NEVER auto-add your agent name as co-author
 - Never manually modify CHANGELOG.md files or any files that are marked as auto-generated
 - When making technical decisions, do not give much weight to development cost.
@@ -13,3 +14,4 @@
 - Apply that same high standard to engineering excellence: lint, test failures, and test flakiness.
   If you see one, even if it is not caused by what you are working on right now, still get it fixed.
 - Before using "dynamic workflows", "ultra code" or any harness feature that immediately spawns a large swarm of subagents, always explain the tradeoffs and ask the user for explicit approval.
+- Whenever you create a git worktree, copy over the `.env` file (and any other gitignored files the app needs to run, e.g. `.env.*`) from the source checkout into the new worktree. Worktrees only carry tracked files, so gitignored env files are missing by default and the app will fail to boot until they're copied over.
