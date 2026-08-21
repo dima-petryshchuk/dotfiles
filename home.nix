@@ -12,6 +12,14 @@ let
     export PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
     exec ${pkgs.nodejs}/bin/node ${pkgs.playwright}/cli.js "$@"
   '';
+
+  # nixpkgs marks abctl broken on Darwin because its telemetry test suite
+  # reads real free-memory stats, which the sandboxed build can't do here -
+  # the binary itself builds and runs fine, so skip checks instead.
+  abctl-darwin = pkgs.abctl.overrideAttrs (old: {
+    doCheck = false;
+    meta = old.meta // { broken = false; };
+  });
 in
 
 {
@@ -33,6 +41,10 @@ in
     playwright-cli # `playwright screenshot <url> <file>` - browser verification for any app, see cleardesk-technical/patterns/browser-verification.md
     opencode  # opencode CLI
     ollama    # run LLMs locally
+    uv        # Python package/venv manager - wshobson/agents' generator scripts shell out to `uv run`
+    ngrok     # local tunnel - exposes localhost webhooks (e.g. Twilio inbound SMS) to the public internet
+    graphviz  # `dot` - renders mingrammer/diagrams (Python) architecture diagrams
+    abctl-darwin
     # the font everything renders in
     nerd-fonts.hack
   ];
