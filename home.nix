@@ -35,6 +35,7 @@ in
     lazygit
     gh        # GitHub CLI - git's credential.helper for github.com shells out to this
     railway   # Railway CLI - deploy logs/status for the apps hosted there
+    google-cloud-sdk # gcloud - the Vertex project, service accounts and keys June's model calls ride on
     neovim
     tree-sitter # CLI nvim-treesitter shells out to for parsers without prebuilt binaries (e.g. luadoc)
     nodejs   # node + npm
