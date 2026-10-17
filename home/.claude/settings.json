@@ -14,6 +14,18 @@
           }
         ]
       }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash|WebFetch|Read|Edit|Write|Grep|Glob",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "f=\"$HOME/Documents/Snap/.claude/hooks/no_phi.py\"; [ ! -f \"$f\" ] || python3 \"$f\"",
+            "timeout": 30
+          }
+        ]
+      }
     ]
   },
   "statusLine": {
