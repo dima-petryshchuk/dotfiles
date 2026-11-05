@@ -10,3 +10,10 @@ result-*
 
 # no-mistakes local validation state - never commit in this public repo
 .no-mistakes/
+
+# rebuild.sh activation logs - local runtime output, never commit
+logs/
+home/.config/herdr/*.sock.agent
+home/.config/herdr/session-snapshots/
+home/.config/herdr/session-history.json
+home/.config/herdr/release-notes.json

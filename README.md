@@ -77,6 +77,7 @@ Edit the config files in place, then apply:
 ```
 
 That's it.
+One command refreshes `flake.lock` against the latest nixpkgs (so all your nix packages update) and then switches to the new generation.
 No separate build-and-copy step.
 
 ## Make it yours
@@ -126,8 +127,8 @@ If you don't use it, just remove it from `brews` in your copy.
   Wires up nixpkgs, nix-darwin, home-manager, and nix-homebrew, and declares the `mac` machine.
 - `configuration.nix` - system-level config: macOS defaults, Homebrew.
 - `home.nix` - user-level config: shell, packages, prompt, and the symlinks described below.
-- `rebuild.sh` - re-applies the config after the first switch.
-  Run this every time you make a change.
+- `rebuild.sh` - updates `flake.lock` to the latest nixpkgs, then re-applies the config.
+  Run this every time you make a change or want package updates.
 - `home/` - the actual config files that get symlinked into place (Neovim, WezTerm, herdr, Claude settings, the shared `AGENTS.md`).
 
 ## How the symlinks work

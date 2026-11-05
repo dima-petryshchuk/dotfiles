@@ -1,0 +1,7 @@
+{
+  "name": "gemini-cli-tree",
+  "private": true,
+  "dependencies": {
+    "@google/gemini-cli": "0.67.0"
+  }
+}

@@ -1,0 +1,5 @@
+# google search grounding is not named under the gcp baa, so prompts never reach it
+[[rule]]
+toolName = ["google_web_search", "web_fetch"]
+decision = "deny"
+priority = 999

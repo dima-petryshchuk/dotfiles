@@ -1,0 +1,32 @@
+{
+  "providers": {
+    "anthropic": {
+      "headers": {
+        "anthropic-workspace-id": "wrkspc_01FprsBz1jFjefLXDftuhVyj"
+      }
+    },
+    "ollama": {
+      "baseUrl": "http://localhost:11434/v1",
+      "api": "openai-completions",
+      "apiKey": "ollama",
+      "models": [
+        {
+          "id": "qwen3.5:35b-a3b-coding-nvfp4",
+          "name": "Qwen3.5 35B A3B Coding (local)",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "contextWindow": 32768,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        }
+      ]
+    }
+  }
+}

@@ -11,7 +11,7 @@ workspace_picker = "prefix+w"
 goto             = "prefix+g"
 previous_workspace = "prefix+["
 next_workspace     = "prefix+]"
-switch_workspace   = "prefix+"  # + 1..9
+switch_workspace   = "prefix+shift+1..9"
 
 # tabs
 new_tab      = "prefix+c"
@@ -19,7 +19,7 @@ close_tab    = "prefix+ampersand"
 rename_tab   = "prefix+shift+t"
 previous_tab = "prefix+p"
 next_tab     = "prefix+n"
-switch_tab   = "prefix+"  # + 1..9
+switch_tab   = "prefix+1..9"
 
 # panes
 split_horizontal = "prefix+double_quote"
@@ -44,7 +44,7 @@ toggle_sidebar  = "prefix+b"
 # agents
 previous_agent = "prefix+shift+["
 next_agent     = "prefix+shift+]"
-focus_agent    = "prefix+a"  # + 1..9
+focus_agent    = "prefix+alt+1..9"
 
 # workspace management
 new_workspace    = "prefix+shift+n"

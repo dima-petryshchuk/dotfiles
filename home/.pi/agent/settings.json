@@ -1,0 +1,28 @@
+{
+  "defaultProvider": "openrouter",
+  "defaultModel": "z-ai/glm-5.3",
+  "defaultThinkingLevel": "medium",
+  "enabledModels": [
+    "openrouter/z-ai/glm-5.3",
+    "openrouter/z-ai/glm-5.3-flash",
+    "anthropic/claude-opus-5-5",
+    "ollama/qwen3.5:35b-a3b-coding-nvfp4"
+  ],
+  "quietStartup": "header",
+  "enableInstallTelemetry": false,
+  "skills": [
+    "~/Documents/Other/aios-private/upwork/skills",
+    "~/.claude/skills/i-have-adhd"
+  ],
+  "packages": [
+    "npm:pi-web-access@0.39.0",
+    "npm:pi-subagents@0.77.0",
+    "npm:@juicesharp/rpiv-ask-user-question@2.13.7",
+    "npm:@juicesharp/rpiv-todo@2.13.7",
+    "npm:pi-lens@4.4.3",
+    "npm:@plannotator/pi-extension@0.28.17",
+    "npm:pi-goal-x@0.32.3",
+    "npm:cc-safety-net@2.6.10"
+  ],
+  "lastChangelogVersion": "1.1.0"
+}

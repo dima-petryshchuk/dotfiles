@@ -25,6 +25,7 @@ add a new symlink in `home.nix`, change shell aliases). Run:
 ```
 
 That's the only command you need day to day.
+Each run also refreshes `flake.lock`, so your nix packages get updated to the latest versions at the same time.
 
 ## Where things live
 

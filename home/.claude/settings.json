@@ -1,6 +1,29 @@
 {
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
   "permissions": {
     "defaultMode": "bypassPermissions"
+  },
+  "model": "fable",
+  "skillOverrides": {
+    "ux-personas": "off",
+    "feature-prioritization": "off",
+    "ai-tuners": "off",
+    "empathy-mapping": "off",
+    "ux-research-methods": "off",
+    "ai-identifiers": "off",
+    "low-effort-high-reward": "off",
+    "ai-inputs": "off",
+    "dieter-rams-principles": "off",
+    "double-diamond": "off",
+    "journey-mapping": "off",
+    "ux-storyboard": "off",
+    "persuasive-ux": "off",
+    "ai-wayfinders": "off",
+    "like-wish-what-if": "off",
+    "ai-trust-builders": "off"
   },
   "hooks": {
     "SessionStart": [
@@ -17,6 +40,15 @@
     ],
     "PreToolUse": [
       {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "rtk hook claude"
+          }
+        ]
+      },
+      {
         "matcher": "Bash|WebFetch|Read|Edit|Write|Grep|Glob",
         "hooks": [
           {
@@ -30,17 +62,19 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "input=$(cat); model=$(echo \"$input\" | jq -r '.model.display_name'); used=$(echo \"$input\" | jq -r '.context_window.used_percentage // empty'); if [ -n \"$used\" ]; then printf \"%s | ctx: %.0f%% used\" \"$model\" \"$used\"; else printf \"%s\" \"$model\"; fi"
+    "command": "input=$(cat); model=$(echo \"$input\" | jq -r '.model.display_name'); used=$(echo \"$input\" | jq -r '.context_window.used_percentage // empty'); cost=$(echo \"$input\" | jq -r '.cost.total_cost_usd // 0'); cost_fmt=$(printf '$%.2f' \"$cost\"); if [ -n \"$used\" ]; then printf \"%s | ctx: %.0f%% used | %s\" \"$model\" \"$used\" \"$cost_fmt\"; else printf \"%s | %s\" \"$model\" \"$cost_fmt\"; fi"
   },
   "enabledPlugins": {
-    "code-simplifier@claude-plugins-official": true,
-    "context7@claude-plugins-official": true,
-    "feature-dev@claude-plugins-official": true,
     "frontend-design@claude-plugins-official": true,
-    "supabase@claude-plugins-official": true,
-    "superpowers@claude-plugins-official": true,
+    "supabase@claude-plugins-official": false,
+    "superpowers@claude-plugins-official": false,
     "mattpocock-skills@mattpocock": true,
-    "compound-engineering@compound-engineering-plugin": true
+    "compound-engineering@compound-engineering-plugin": true,
+    "ponytail@ponytail": false,
+    "understand-anything@understand-anything": false,
+    "python-development@claude-code-workflows": true,
+    "backend-development@claude-code-workflows": true,
+    "taste-skill@taste-skill": true
   },
   "extraKnownMarketplaces": {
     "mattpocock": {
@@ -54,10 +88,36 @@
         "source": "github",
         "repo": "EveryInc/compound-engineering-plugin"
       }
+    },
+    "ponytail": {
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
+      }
+    },
+    "understand-anything": {
+      "source": {
+        "source": "github",
+        "repo": "Egonex-AI/Understand-Anything"
+      }
+    },
+    "claude-code-workflows": {
+      "source": {
+        "source": "github",
+        "repo": "wshobson/agents"
+      }
+    },
+    "taste-skill": {
+      "source": {
+        "source": "github",
+        "repo": "Leonxlnx/taste-skill"
+      }
     }
   },
   "effortLevel": "medium",
+  "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
   "theme": "dark-ansi",
+  "switchModelsOnFlag": true,
   "agentPushNotifEnabled": true
 }

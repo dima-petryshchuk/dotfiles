@@ -1,0 +1,3 @@
+# user-global rtk filters, applied to every project; a project's .rtk/filters.toml wins over these
+# fields: https://github.com/rtk-ai/rtk/blob/master/src/filters/README.md
+schema_version = 1
